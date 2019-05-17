@@ -1,0 +1,20 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/essential",
+    "@vue/prettier",
+    "airbnb/base"
+  ],
+  "rules": {
+    "comma-dangle": "error",
+    "prettier/prettier": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-new": "off"
+  },
+  "parserOptions": {
+    "parser": "babel-eslint"
+  }
+}
