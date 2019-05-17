@@ -10,6 +10,8 @@ npm install vue-metamask-tip --save
 
 ## Usage
 
+in main.js
+
 ```js
 import Vue from 'vue';
 import MetamaskTipButton from 'vue-metamask-tip';
@@ -25,3 +27,25 @@ new Vue({
   render: h => h(App),
 });
 ```
+
+in index.js
+
+```html
+<template>
+  <div>
+    <MetamaskTipButton
+      address="0x32Be343B94f860124dC4fEe278FDCBD38C102D88"
+      amount="1"
+      type="1"
+    ></MetamaskTipButton>
+  </div>
+</template>
+```
+
+## Props
+
+|Name|Type|Default|Description|
+|---|---|---|---|
+|amount|String||ETH amount, use string to prevent float precision issue|
+|address|String||Receiver ETH wallet|
+|type|String|1|MetaMask button type|
