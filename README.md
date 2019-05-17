@@ -28,7 +28,7 @@ new Vue({
 });
 ```
 
-in index.js
+in index.vue
 
 ```html
 <template>
