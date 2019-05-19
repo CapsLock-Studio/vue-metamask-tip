@@ -1,6 +1,6 @@
 {
   "name": "vue-metamask-tip",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Vue metakmask tip button",
   "main": "dist/vue-metamask-tip.umd.min.js",
   "scripts": {
