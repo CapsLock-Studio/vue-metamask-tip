@@ -1,0 +1,15 @@
+language: node_js
+if: tag IS present
+node_js:
+  - "10"
+before_install:
+  - npm install -g pnpm
+install:
+  - pnpm install
+deploy:
+  provider: npm
+  email: michael34435@capslock.tw
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
+    repo: CapsLock-Studio/vue-metamask-tip
