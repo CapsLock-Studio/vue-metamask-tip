@@ -49,3 +49,4 @@ in index.vue
 |amount|String||ETH amount, use string to prevent float precision issue|
 |address|String||Receiver ETH wallet|
 |type|String|1|MetaMask button type|
+|callback|String||This component will post `{"hash": "<ID>"}` to this url|
