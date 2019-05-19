@@ -11,6 +11,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
 import Notification from 'vue-notification';
 import Vue from 'vue';
 
@@ -35,6 +36,9 @@ export default {
     amount: {
       type: String,
       required: true,
+    },
+    callback: {
+      type: String,
     },
   },
   mounted() {
@@ -67,7 +71,7 @@ export default {
                 from: user,
                 value: web3js.toWei(this.amount, 'ether'),
               },
-              (error, transactionHash) => {
+              (error, hash) => {
                 if (error) {
                   this.$notify(
                     {
@@ -82,10 +86,14 @@ export default {
                     {
                       type: 'sucess',
                       title: 'Success!',
-                      text: `Transaction complete! hash: ${transactionHash}`,
+                      text: `Transaction complete! hash: ${hash}`,
                       duration: 5000,
                     },
                   );
+
+                  if (this.callback) {
+                    axios.post(this.callback, { hash });
+                  }
                 }
               },
             );
